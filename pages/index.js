@@ -6,7 +6,7 @@ export default function Home() {
 	return (
 		<div className={styles.container}>
 			<Head>
-				<title>Jordan Souchez | Developpeur d'intéractions créatives</title>
+				<title>Jordan Souchez | Developpeur d{"'"}intéractions créatives</title>
 				<meta
 					name='description'
 					content='Etudiant en developpement web, spécialisé dans le front end et les animations et interactions avec les utilisateurs.'
