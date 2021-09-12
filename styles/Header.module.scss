@@ -1,0 +1,36 @@
+.header {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  nav {
+    display: none;
+    gap: 30px;
+    
+    @media screen and (min-width: 768px) {
+      display: flex;
+    }
+  }
+
+  > a {
+    margin-bottom: 0;
+  }
+}
+
+.brandLink {
+  display: flex;
+  align-items: center;
+
+  span {
+    display: none;
+    margin-left: 1rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+
+    @media screen and (min-width: 992px) {
+      display: flex;
+    }
+  }
+}

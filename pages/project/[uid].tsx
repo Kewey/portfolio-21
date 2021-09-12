@@ -1,8 +1,15 @@
+import {Client} from '../prismic-config'
+import {RichText} from 'prismic-reactjs'
+
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+
+
+export default function Home({document}: any) {
+
+	const { data } = document
+
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -15,8 +22,20 @@ export default function Home() {
 			</Head>
 
 			<main className={styles.main}>
-				<h1 className={styles.title}>Site en construction</h1>
+				<h1 className={styles.title}>
+					{RichText.asText(data.title)}
+				</h1>
 			</main>
 		</div>
 	)
+}
+
+export async function getStaticProps() {
+	const document = await Client.getSingle('homepage', {})
+
+	return {
+		props : {
+			document
+		}
+	}
 }
