@@ -1,3 +1,4 @@
+import Prismic from "@prismicio/client";
 import {Client} from '../../prismic-config'
 import {RichText} from 'prismic-reactjs'
 
@@ -30,12 +31,22 @@ export default function Home({document}: any) {
 	)
 }
 
-export async function getStaticProps() {
-	const document = await Client.getSingle('homepage', {})
+export async function getStaticPaths() {
+	const allProjects = await Client.query(Prismic.Predicates.at('document.type', 'project'))
+  return {
+    paths: allProjects.results.map((project) => {
+      return { params: { uid: project.uid }};
+    }),
+    fallback: false,
+  }
+}
 
-	return {
-		props : {
-			document
-		}
-	}
+export async function getStaticProps({params} : any) {
+  const post = await Client.getByUID('page', params.uid, {})
+
+  return {
+    props: {
+      post,
+    },
+  }
 }
