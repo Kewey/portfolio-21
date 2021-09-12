@@ -1,4 +1,4 @@
-import {Client} from '../prismic-config'
+import {Client} from '../../prismic-config'
 import {RichText} from 'prismic-reactjs'
 
 import Head from 'next/head'
