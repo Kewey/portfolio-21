@@ -1,10 +1,10 @@
 import Layout from 'components/Layout'
 import React from 'react'
 
-export default function index() {
+export default function contact() {
 	return (
 		<Layout>
-			<h1>Mes projets</h1>
+			<h1>Contact</h1>
 		</Layout>
 	)
 }

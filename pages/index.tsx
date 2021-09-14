@@ -35,11 +35,11 @@ export default function Home({ document }: any) {
 					<div className={hero.buttons}>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
 							<path
-								id="circle"
+								id='circle'
 								d='M 25, 50 a 25,25 0 1,1 50,0 a 25,25 0 1,1 -50,0'
 							/>
-							<text fill="#fff" >
-								<textPath xlinkHref='#circle' textLength="150">
+							<text fill='#fff'>
+								<textPath xlinkHref='#circle' textLength='150'>
 									{RichText.asText(data.available)}
 								</textPath>
 							</text>
@@ -51,9 +51,7 @@ export default function Home({ document }: any) {
 					</div>
 				</div>
 			</section>
-			<section className='container'>
-
-			</section>
+			<section className='container'></section>
 		</Layout>
 	)
 }
