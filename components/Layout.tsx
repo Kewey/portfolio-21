@@ -16,14 +16,14 @@ export default function Layout({ children }: any) {
 					</a>
 				</Link>
 				<nav>
-					<Link href='project'>
+					<Link href='/project'>
 						<a>_Projets</a>
 					</Link>
 					{/* <Link href='lab'>_Lab</Link> */}
 					{/* <Link href='article'>_Articles</Link> */}
 					{/* <Link href='about'>_A propos</Link> */}
 				</nav>
-				<Button url='contact'>Contactez moi</Button>
+				<Button url='/contact'>Contactez moi</Button>
 			</header>
 			<main>{children}</main>
 		</>
