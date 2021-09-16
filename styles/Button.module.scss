@@ -1,50 +1,68 @@
-.button {
+.primary {
+  --biseau: 20px;
   position: relative;
   padding: 19px 30px;
   display: inline-flex;
   align-items: center;
   background: var(--primary);
   margin-bottom: 2rem;
+  clip-path: polygon(var(--biseau) 0%, 100% 0, 100% calc(100% - var(--biseau)), calc(100% - var(--biseau)) 100%, 0 100%, 0% var(--biseau));
+  transition: clip-path .3s ease;
   
   > span {
+    display: inline-flex;
+    gap: 1rem;
     will-change: transform;
     transition: transform .3s ease;
     font-weight: bold;
   }
 
-  &:hover {
-    > span {
-      transform: skewY(-5deg);
-    }
-
-    &::before {
-      border-left-width: 30px;
-      border-bottom-width: 30px;
-    }
-
-    &::after {
-      border-right-width: 30px;
-      border-top-width: 30px;
-    }
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-left: 20px solid var(--dark);
-    border-bottom: 20px solid transparent;
-    transition: border-width .3s ease;
-  }
-
   &::after {
     content: '';
     position: absolute;
-    bottom: -1px;
-    right: 0;
-    border-right: 20px solid var(--dark);
-    border-top: 20px solid transparent;
-    transition: border-width .3s ease;
+    inset: 0;
+    transform-origin: left center;
+    background: rgba(255,255,255,.1);
+    transform: scaleX(0);
+    transition: transform .3s ease;
+  }
+
+  &:hover {
+    &::after {
+      transform:  scaleX(1);
+    }
+  }
+
+
+}
+
+.text {
+  position: relative;
+  display: block;
+  padding: 19px 30px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  background: transparent;
+  transition: background .3s ease;
+
+  > span {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,.2);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .3s ease;
+  }
+
+  &:hover {
+    &::after {
+      transform: scaleX(1);
+    }
   }
 }

@@ -3,6 +3,7 @@ $md: 768px;
 $lg: 992px;
 $xl: 1200px;
 $xxl: 1400px;
+$xxxl: 1600px;
 
 html,
 body {
@@ -25,6 +26,12 @@ a {
 	text-decoration: none;
 }
 
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
 * {
 	padding: 0;
 	margin: 0;
@@ -33,14 +40,38 @@ a {
 
 p {
   margin-bottom: 1.25rem;
+	line-height: 1.475;
+}
+
+h2, h3, h4, h5, h6 {
+	margin-bottom: 1rem;
+
 }
 
 h1 {
-	font-size: 4.5rem;
+	font-size: 3rem;
+	margin-bottom: 2rem;
 
 	strong {
 		color: var(--primary);
 	}
+}
+
+h2 {
+	font-size: 2rem;
+	font-weight: bold;
+	margin-bottom: 1.5rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+h4 {
+	font-size: 1.3rem;
+	font-weight: bold;
 }
 
 .container {
@@ -87,6 +118,10 @@ h1 {
 	@media screen and (min-width: $xxl) {
 		max-width: 1320px;
 	}
+
+	@media screen and (min-width: $xxxl) {
+		max-width: 1560px;
+	}
 }
 
 .grid {
@@ -105,4 +140,12 @@ hr {
   background: var(--light);
   border: none;
   margin: 10px 0;
+}
+
+.swiper {
+	overflow: visible !important;
+}
+
+.biseau {
+  clip-path: polygon(var(--biseau) 0%, 100% 0, 100% calc(100% - var(--biseau)), calc(100% - var(--biseau)) 100%, 0 100%, 0% var(--biseau));
 }

@@ -1,0 +1,12 @@
+.slider {
+  overflow: hidden;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+
+  > img {
+    margin-bottom: 1rem;
+  }
+}
