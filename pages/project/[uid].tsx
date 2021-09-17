@@ -1,13 +1,12 @@
 import React from 'react'
 import Prismic from '@prismicio/client'
-import Link from 'next/link'
 import { Client } from 'prismic-config'
 import { RichText } from 'prismic-reactjs'
 import Layout from 'components/Layout'
 import projectCSS from 'styles/Project.module.scss'
 import Button from 'components/Button'
 import Icon from 'components/Icon'
-import arrow from 'public/arrow.svg'
+import arrow from 'public/Arrow.svg'
 
 export default function Project({ project }: any) {
 	const { data } = project
