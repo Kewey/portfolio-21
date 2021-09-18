@@ -7,11 +7,17 @@ import projectCSS from 'styles/Project.module.scss'
 import Button from 'components/Button'
 import Icon from 'components/Icon'
 import arrow from 'public/Arrow.svg'
+import Head from 'next/head'
 
 export default function Project({ project }: any) {
 	const { data } = project
 	return (
 		<Layout>
+			<Head>
+				<title>{RichText.asText(data.project_name)} | Jordan Souchez</title>
+				<meta name='description' content={RichText.asText(data.description)} />
+				<link rel='icon' href='/favicon.ico' />
+			</Head>
 			<section className={projectCSS.hero}>
 				<div className='container'>
 					<div className={projectCSS.grid}>
