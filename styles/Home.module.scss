@@ -18,7 +18,9 @@
 		}
 
 		> .content {
-			display: contents;
+			@media screen and (max-width: 994px) {
+				display: contents;
+			}
 
 			> h1 {
 				font-size: clamp(2rem, -0.8rem + 5.65vw, 4.25rem);
