@@ -3,6 +3,7 @@ import Layout from 'components/Layout'
 import { useForm } from 'react-hook-form'
 import Button from 'components/Button'
 import ButtonCss from 'styles/Button.module.scss'
+import Head from 'next/head'
 
 export default function Contact() {
 	const { register, handleSubmit, watch } = useForm()
@@ -22,6 +23,14 @@ export default function Contact() {
 
 	return (
 		<Layout>
+			<Head>
+				<title>Contact | Jordan Souchez</title>
+				<meta
+					name='description'
+					content="Pour toutes demandes de projets ou d'emploie vous pouvez me contacter ici."
+				/>
+				<link rel='icon' href='/favicon.ico' />
+			</Head>
 			<section>
 				<div className='container'>
 					<h1>Contactez moi</h1>

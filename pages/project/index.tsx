@@ -6,10 +6,19 @@ import { RichText } from 'prismic-reactjs'
 
 import Layout from 'components/Layout'
 import project from 'styles/Project.module.scss'
+import Head from 'next/head'
 
 export default function index({ posts }: any) {
 	return (
 		<Layout>
+			<Head>
+				<title>Mes projets | Jordan Souchez</title>
+				<meta
+					name='description'
+					content='La liste de tous mes projets est ici.'
+				/>
+				<link rel='icon' href='/favicon.ico' />
+			</Head>
 			<div className='container'>
 				<h1>Mes projets</h1>
 				{posts.results.map((post: any) => (
