@@ -1,68 +1,76 @@
 .primary {
-  --biseau: 20px;
-  position: relative;
-  padding: 19px 30px;
-  display: inline-flex;
-  align-items: center;
-  background: var(--primary);
-  margin-bottom: 2rem;
-  clip-path: polygon(var(--biseau) 0%, 100% 0, 100% calc(100% - var(--biseau)), calc(100% - var(--biseau)) 100%, 0 100%, 0% var(--biseau));
-  transition: clip-path .3s ease;
-  
-  > span {
-    display: inline-flex;
-    gap: 1rem;
-    will-change: transform;
-    transition: transform .3s ease;
-    font-weight: bold;
-  }
+	--biseau: 20px;
+	border: none;
+	position: relative;
+	padding: 19px 30px;
+	display: inline-flex;
+	align-items: center;
+	background: var(--primary);
+	color: var(--light);
+	margin-bottom: 2rem;
+	clip-path: polygon(
+		var(--biseau) 0%,
+		100% 0,
+		100% calc(100% - var(--biseau)),
+		calc(100% - var(--biseau)) 100%,
+		0 100%,
+		0% var(--biseau)
+	);
+	transition: clip-path 0.3s ease;
 
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    transform-origin: left center;
-    background: rgba(255,255,255,.1);
-    transform: scaleX(0);
-    transition: transform .3s ease;
-  }
+	> span {
+		display: inline-flex;
+		gap: 1rem;
+		will-change: transform;
+		transition: transform 0.3s ease;
+		font-weight: bold;
+	}
 
-  &:hover {
-    &::after {
-      transform:  scaleX(1);
-    }
-  }
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		transform-origin: left center;
+		background: rgba(255, 255, 255, 0.1);
+		transform: scaleX(0);
+		transition: transform 0.3s ease;
+	}
 
-
+	&:hover {
+		&::after {
+			transform: scaleX(1);
+		}
+	}
 }
 
 .text {
-  position: relative;
-  display: block;
-  padding: 19px 30px;
-  margin-bottom: 30px;
-  font-weight: bold;
-  background: transparent;
-  transition: background .3s ease;
+	border: none;
+	position: relative;
+	display: inline-flex;
+	padding: 19px 30px;
+	margin-bottom: 30px;
+	font-weight: bold;
+	background: transparent;
+	transition: background 0.3s ease;
 
-  > span {
-    display: flex;
-    gap: 1rem;
-  }
+	> span {
+		display: inline-flex;
+		gap: 1rem;
+	}
 
-  &:after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(255,255,255,.2);
-    transform: scaleX(0);
-    transform-origin: left center;
-    transition: transform .3s ease;
-  }
+	&:after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: rgba(255, 255, 255, 0.2);
+		transform: scaleX(0);
+		transform-origin: left center;
+		transition: transform 0.3s ease;
+	}
 
-  &:hover {
-    &::after {
-      transform: scaleX(1);
-    }
-  }
+	&:hover {
+		&::after {
+			transform: scaleX(1);
+		}
+	}
 }

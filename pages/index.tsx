@@ -78,7 +78,6 @@ export default function Home({ document, projects }: any) {
 							},
 						}}>
 						{projects.results.map((project: any) => {
-							console.log(`project.data.cover.url`, project.data.cover.url)
 							return (
 								<SwiperSlide key={project.uid}>
 									<Link href={'/project/' + project.uid} passHref>

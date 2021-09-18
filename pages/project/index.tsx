@@ -5,6 +5,7 @@ import { Client } from 'prismic-config'
 import { RichText } from 'prismic-reactjs'
 
 import Layout from 'components/Layout'
+import project from 'styles/Project.module.scss'
 
 export default function index({ posts }: any) {
 	return (
@@ -14,8 +15,15 @@ export default function index({ posts }: any) {
 				{posts.results.map((post: any) => (
 					<Link href={'/project/' + post.uid} key={post.uid} passHref>
 						<a>
-							<img src={post.data.cover.url} alt={post.data.cover.alt} />
-							<h2>{RichText.asText(post.data.project_name)}</h2>
+							<div className={project.projectCard}>
+								<div className={project.wrapperCover}>
+									<img src={post.data.cover.url} alt={post.data.cover.alt} />
+								</div>
+								<div className={project.content}>
+									<h2>{RichText.asText(post.data.project_name)}</h2>
+									{RichText.render(post.data.skills)}
+								</div>
+							</div>
 						</a>
 					</Link>
 				))}
