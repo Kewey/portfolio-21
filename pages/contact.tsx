@@ -4,20 +4,25 @@ import { useForm } from 'react-hook-form'
 import Button from 'components/Button'
 import ButtonCss from 'styles/Button.module.scss'
 import Head from 'next/head'
+import { RichText } from 'prismic-reactjs'
 
 export default function Contact() {
-	const { register, handleSubmit, watch } = useForm()
+	const [formLoad, setFormLoad] = useState(false)
+	const [sendForm, setSendForm] = useState(false)
+	const { register, handleSubmit } = useForm()
 
 	const onSubmit = handleSubmit(async (data: any) => {
+		setFormLoad(true)
 		const res = await fetch('/api/contact-form', {
 			method: 'POST',
 			body: JSON.stringify(data),
 		})
 
 		if (res.status === 201) {
-			console.log(`res`, res)
+			setFormLoad(true)
+			setSendForm(true)
 		} else {
-			await res.json()
+			setFormLoad(true)
 		}
 	})
 
@@ -38,23 +43,31 @@ export default function Contact() {
 					<form onSubmit={onSubmit}>
 						<div>
 							<label htmlFor='nom'>Nom</label>
-							<input {...register('nom')} />
+							<input {...register('nom', { required: true, maxLength: 80 })} />
 						</div>
 						<div>
 							<label htmlFor='prenom'>Prenom</label>
-							<input {...register('prenom')} />
+							<input
+								{...register('prenom', { required: true, maxLength: 80 })}
+							/>
 						</div>
 						<div>
 							<label htmlFor='mail'>Adresse mail</label>
-							<input {...register('email')} />
+							<input
+								{...register('email', {
+									required: true,
+									pattern: /^\S+@\S+$/i,
+								})}
+							/>
 						</div>
 						<div>
 							<label htmlFor='message'>Votre message</label>
-							<textarea {...register('message')}></textarea>
+							<textarea {...register('message', { required: true })}></textarea>
 						</div>
 						<div>
-							<button className={ButtonCss.primary}>
-								<span>Envoyer</span>
+							<button className={ButtonCss.primary} disabled={formLoad}>
+								{!sendForm && <span>Envoyer</span>}
+								{sendForm && <span>Message envoyé</span>}
 							</button>
 						</div>
 					</form>
