@@ -65,7 +65,9 @@ export default function Contact() {
 							<textarea {...register('message', { required: true })}></textarea>
 						</div>
 						<div>
-							<button className={ButtonCss.primary} disabled={formLoad}>
+							<button
+								className={ButtonCss.primary}
+								disabled={formLoad || sendForm}>
 								{!sendForm && <span>Envoyer</span>}
 								{sendForm && <span>Message envoyé</span>}
 							</button>
