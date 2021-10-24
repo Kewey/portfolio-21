@@ -39,18 +39,21 @@ img {
 }
 
 p {
-  margin-bottom: 1.25rem;
+	margin-bottom: 1.25rem;
 	line-height: 1.475;
 }
 
-h2, h3, h4, h5, h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
 	margin-bottom: 1rem;
-
 }
 
 h1 {
 	font-size: 3rem;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 
 	strong {
 		color: var(--primary);
@@ -79,9 +82,10 @@ form {
 		> label {
 			display: flex;
 			font-weight: bold;
-			margin-bottom: .5rem;
+			margin-bottom: 0.5rem;
 		}
-		> input, > textarea {
+		> input,
+		> textarea {
 			border: none;
 			appearance: none;
 
@@ -89,7 +93,7 @@ form {
 			padding: 12px 15px;
 			max-width: 600px;
 			width: 100%;
-			background: rgba(#fff, .1);
+			background: rgba(#fff, 0.1);
 			margin-bottom: 1rem;
 			color: var(--light);
 		}
@@ -97,7 +101,7 @@ form {
 }
 
 .container {
-  padding: 0 30px;
+	padding: 0 30px;
 	margin: 0 auto;
 	max-width: 100%;
 
@@ -158,10 +162,10 @@ form {
 }
 
 hr {
-  height: 1px;
-  background: var(--light);
-  border: none;
-  margin: 10px 0;
+	height: 1px;
+	background: var(--light);
+	border: none;
+	margin: 10px 0;
 }
 
 .swiper {
@@ -169,5 +173,12 @@ hr {
 }
 
 .biseau {
-  clip-path: polygon(var(--biseau) 0%, 100% 0, 100% calc(100% - var(--biseau)), calc(100% - var(--biseau)) 100%, 0 100%, 0% var(--biseau));
+	clip-path: polygon(
+		var(--biseau) 0%,
+		100% 0,
+		100% calc(100% - var(--biseau)),
+		calc(100% - var(--biseau)) 100%,
+		0 100%,
+		0% var(--biseau)
+	);
 }

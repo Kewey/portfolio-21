@@ -74,3 +74,35 @@
 		}
 	}
 }
+
+.external {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 20px 20px 0;
+	border-bottom: 1px solid #fff;
+	transition: padding 0.3s ease;
+
+	> span {
+		font-weight: bold;
+		z-index: 2;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		width: 0;
+		background: rgba(255, 255, 255, 0.1);
+		transition: width 0.3s ease;
+	}
+
+	&:hover {
+		padding: 20px;
+
+		&::after {
+			width: 100%;
+		}
+	}
+}

@@ -1,6 +1,9 @@
-import React, { ReactChildren, ReactElement } from 'react'
+import React, { ReactElement } from 'react'
 import Link from 'next/link'
 import styles from 'styles/Button.module.scss'
+import Icon from './Icon'
+
+import linkOut from 'public/Link-out-arrow.svg'
 
 export default function Button({
 	url,
@@ -11,29 +14,19 @@ export default function Button({
 }: {
 	url: string
 	children: ReactElement | string
-	variante?: string
+	variante?: 'primary' | 'text' | 'external'
 	icon?: ReactElement
 	isExternal?: boolean
 }) {
-	if (isExternal) {
-		return (
-			<a className={styles[variante]} href={url}>
+	return (
+		<Link href={url} passHref>
+			<a className={styles[variante]} target={isExternal ? '_blank' : '_self'}>
 				<span>
 					{icon}
 					{children}
 				</span>
+				{variante === 'external' && <Icon file={linkOut} />}
 			</a>
-		)
-	} else {
-		return (
-			<Link href={url} passHref>
-				<a className={styles[variante]}>
-					<span>
-						{icon}
-						{children}
-					</span>
-				</a>
-			</Link>
-		)
-	}
+		</Link>
+	)
 }

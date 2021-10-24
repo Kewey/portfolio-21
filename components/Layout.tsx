@@ -19,9 +19,9 @@ export default function Layout({ children }: any) {
 					<Link href='/project'>
 						<a>_Projets</a>
 					</Link>
-					{/* <Link href='lab'>_Lab</Link> */}
-					{/* <Link href='article'>_Articles</Link> */}
-					{/* <Link href='about'>_A propos</Link> */}
+					{/* <Link href='/lab'>_Lab</Link> */}
+					{/* <Link href='/article'>_Articles</Link> */}
+					<Link href='/about'>_A propos</Link>
 				</nav>
 				<Button url='/contact'>Contactez moi</Button>
 			</header>
